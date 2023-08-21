@@ -9,6 +9,17 @@ import UIKit
 import SwiftUI
 
 @main
+struct MC3App: App {
+    @StateObject var conn4VM = ConnnectFourViewModel()
+    var body: some Scene {
+        WindowGroup {
+            
+            Home()
+                .environmentObject(conn4VM)
+            
+        }
+    }
+}
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,10 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
+        let Arview2 = ViewAr2()
 
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIHostingController(rootView: contentView)
+        window.rootViewController = UIHostingController(rootView: Arview2)
         self.window = window
         window.makeKeyAndVisible()
         return true
