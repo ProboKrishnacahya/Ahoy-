@@ -77,7 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		70162FB92A88BE370038AD6E /* BelajarArKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BelajarArKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70162FB92A88BE370038AD6E /* Ahoy!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ahoy!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70162FBC2A88BE370038AD6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70162FBE2A88BE370038AD6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		70162FC22A88BE380038AD6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		70162FBA2A88BE370038AD6E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				70162FB92A88BE370038AD6E /* BelajarArKit.app */,
+				70162FB92A88BE370038AD6E /* Ahoy!.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,7 +191,6 @@
 				70FE94592A93283600C59AAE /* Host */,
 				70FE945A2A93284000C59AAE /* Join */,
 				70FE945C2A93286600C59AAE /* Main */,
-				70FE940E2A8E78EC00C59AAE /* Object */,
 				70162FC42A88BE380038AD6E /* Preview Content */,
 			);
 			path = BelajarArKit;
@@ -235,13 +234,6 @@
 				70FE956F2A95E30100C59AAE /* p25.png */,
 			);
 			path = card;
-			sourceTree = "<group>";
-		};
-		70FE940E2A8E78EC00C59AAE /* Object */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Object;
 			sourceTree = "<group>";
 		};
 		70FE94592A93283600C59AAE /* Host */ = {
@@ -317,9 +309,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		70162FB82A88BE370038AD6E /* BelajarArKit */ = {
+		70162FB82A88BE370038AD6E /* Ahoy! */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70162FC92A88BE380038AD6E /* Build configuration list for PBXNativeTarget "BelajarArKit" */;
+			buildConfigurationList = 70162FC92A88BE380038AD6E /* Build configuration list for PBXNativeTarget "Ahoy!" */;
 			buildPhases = (
 				70162FB52A88BE370038AD6E /* Sources */,
 				70162FB62A88BE370038AD6E /* Frameworks */,
@@ -329,9 +321,9 @@
 			);
 			dependencies = (
 			);
-			name = BelajarArKit;
+			name = "Ahoy!";
 			productName = BelajarArKit;
-			productReference = 70162FB92A88BE370038AD6E /* BelajarArKit.app */;
+			productReference = 70162FB92A88BE370038AD6E /* Ahoy!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -349,7 +341,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 70162FB42A88BE370038AD6E /* Build configuration list for PBXProject "BelajarArKit" */;
+			buildConfigurationList = 70162FB42A88BE370038AD6E /* Build configuration list for PBXProject "Ahoy!" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -362,7 +354,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				70162FB82A88BE370038AD6E /* BelajarArKit */,
+				70162FB82A88BE370038AD6E /* Ahoy! */,
 			);
 		};
 /* End PBXProject section */
@@ -596,7 +588,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = han.BelajarArKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ahoy!";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -630,7 +622,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = han.BelajarArKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ahoy!";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -640,7 +632,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70162FB42A88BE370038AD6E /* Build configuration list for PBXProject "BelajarArKit" */ = {
+		70162FB42A88BE370038AD6E /* Build configuration list for PBXProject "Ahoy!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70162FC72A88BE380038AD6E /* Debug */,
@@ -649,7 +641,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70162FC92A88BE380038AD6E /* Build configuration list for PBXNativeTarget "BelajarArKit" */ = {
+		70162FC92A88BE380038AD6E /* Build configuration list for PBXNativeTarget "Ahoy!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70162FCA2A88BE380038AD6E /* Debug */,

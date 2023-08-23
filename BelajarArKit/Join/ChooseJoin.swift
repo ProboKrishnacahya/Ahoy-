@@ -38,7 +38,13 @@ struct ChooseJoin: View {
                                 .padding(.bottom, -70)
                                 .padding(.top, -40)
                             VStack{
+                                
                                 VStack{
+                                    Text("Pick Your Hidden Crewmates!")
+                                        .bold()
+                                        .foregroundColor(Color.white)
+                                        .font(.title2)
+                                        .multilineTextAlignment(.center)
                                     HStack{
                                         Image("p1")
                                             .resizable()
