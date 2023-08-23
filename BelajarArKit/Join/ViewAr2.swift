@@ -124,7 +124,7 @@ struct ARViewContainer2: UIViewRepresentable {
         let anchor =  AnchorEntity(plane: .horizontal)
         
         
-        if let modelEntity = try? ModelEntity.load(named: "boardblue") {
+        if let modelEntity = try? ModelEntity.load(named: "blue_board") {
             let anchor = AnchorEntity(plane: .horizontal)
             modelEntity.scale = SIMD3<Float>(0.035, 0.035, 0.035)
             

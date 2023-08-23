@@ -12,9 +12,6 @@
 		70162FC32A88BE380038AD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70162FC22A88BE380038AD6E /* Assets.xcassets */; };
 		70162FC62A88BE380038AD6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70162FC52A88BE380038AD6E /* Preview Assets.xcassets */; };
 		70162FCD2A89678F0038AD6E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70162FCC2A89678F0038AD6E /* Coordinator.swift */; };
-		70162FCF2A8967D20038AD6E /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70162FCE2A8967D20038AD6E /* ColorExt.swift */; };
-		70162FD12A89D8700038AD6E /* board_blue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70162FD02A89D8700038AD6E /* board_blue.usdz */; };
-		70162FF42A8B5A3A0038AD6E /* boardbaru.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70162FF32A8B5A3A0038AD6E /* boardbaru.usdz */; };
 		701630102A8B65740038AD6E /* ControllerMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016300F2A8B65740038AD6E /* ControllerMultipeer.swift */; };
 		701630132A8B67BF0038AD6E /* AppMC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701630122A8B67BF0038AD6E /* AppMC3.swift */; };
 		7070ED1D2A96056400703708 /* 25.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7070ED1C2A96056400703708 /* 25.usdz */; };
@@ -25,7 +22,7 @@
 		70FE944E2A90AAC000C59AAE /* ChooseJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE944D2A90AAC000C59AAE /* ChooseJoin.swift */; };
 		70FE94502A912F0500C59AAE /* ViewAr2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE944F2A912F0500C59AAE /* ViewAr2.swift */; };
 		70FE94562A9226B200C59AAE /* CoordinatorJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE94552A9226B200C59AAE /* CoordinatorJoin.swift */; };
-		70FE945E2A94B2BD00C59AAE /* boardblue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70FE945D2A94B2BD00C59AAE /* boardblue.usdz */; };
+		70FE945E2A94B2BD00C59AAE /* blue_board.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70FE945D2A94B2BD00C59AAE /* blue_board.usdz */; };
 		70FE950C2A95E12600C59AAE /* 11.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70FE94F32A95E12500C59AAE /* 11.usdz */; };
 		70FE950D2A95E12600C59AAE /* 15.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70FE94F42A95E12500C59AAE /* 15.usdz */; };
 		70FE950E2A95E12600C59AAE /* 16.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70FE94F52A95E12500C59AAE /* 16.usdz */; };
@@ -75,7 +72,8 @@
 		70FE95862A95E30100C59AAE /* p22.png in Resources */ = {isa = PBXBuildFile; fileRef = 70FE956D2A95E30100C59AAE /* p22.png */; };
 		70FE95872A95E30100C59AAE /* p14.png in Resources */ = {isa = PBXBuildFile; fileRef = 70FE956E2A95E30100C59AAE /* p14.png */; };
 		70FE95882A95E30100C59AAE /* p25.png in Resources */ = {isa = PBXBuildFile; fileRef = 70FE956F2A95E30100C59AAE /* p25.png */; };
-		70FE958A2A95E42900C59AAE /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 70FE95892A95E42900C59AAE /* Audio */; };
+		8252E59F2A961052000B531C /* Card.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8252E59E2A961052000B531C /* Card.mp3 */; };
+		8252E5A12A96110A000B531C /* red_board.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8252E5A02A96110A000B531C /* red_board.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,9 +83,6 @@
 		70162FC22A88BE380038AD6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70162FC52A88BE380038AD6E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70162FCC2A89678F0038AD6E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		70162FCE2A8967D20038AD6E /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
-		70162FD02A89D8700038AD6E /* board_blue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = board_blue.usdz; path = "../../../../Downloads/MC3-main/MC3/Objects/board_blue.usdz"; sourceTree = "<group>"; };
-		70162FF32A8B5A3A0038AD6E /* boardbaru.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = boardbaru.usdz; path = ../../../../Downloads/boardbaru.usdz; sourceTree = "<group>"; };
 		7016300F2A8B65740038AD6E /* ControllerMultipeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerMultipeer.swift; sourceTree = "<group>"; };
 		701630112A8B658B0038AD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		701630122A8B67BF0038AD6E /* AppMC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMC3.swift; sourceTree = "<group>"; };
@@ -99,7 +94,7 @@
 		70FE944D2A90AAC000C59AAE /* ChooseJoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseJoin.swift; sourceTree = "<group>"; };
 		70FE944F2A912F0500C59AAE /* ViewAr2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAr2.swift; sourceTree = "<group>"; };
 		70FE94552A9226B200C59AAE /* CoordinatorJoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorJoin.swift; sourceTree = "<group>"; };
-		70FE945D2A94B2BD00C59AAE /* boardblue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = boardblue.usdz; sourceTree = "<group>"; };
+		70FE945D2A94B2BD00C59AAE /* blue_board.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = blue_board.usdz; sourceTree = "<group>"; };
 		70FE94F32A95E12500C59AAE /* 11.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 11.usdz; sourceTree = "<group>"; };
 		70FE94F42A95E12500C59AAE /* 15.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 15.usdz; sourceTree = "<group>"; };
 		70FE94F52A95E12500C59AAE /* 16.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 16.usdz; sourceTree = "<group>"; };
@@ -149,7 +144,8 @@
 		70FE956D2A95E30100C59AAE /* p22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p22.png; sourceTree = "<group>"; };
 		70FE956E2A95E30100C59AAE /* p14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p14.png; sourceTree = "<group>"; };
 		70FE956F2A95E30100C59AAE /* p25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p25.png; sourceTree = "<group>"; };
-		70FE95892A95E42900C59AAE /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
+		8252E59E2A961052000B531C /* Card.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Card.mp3; sourceTree = "<group>"; };
+		8252E5A02A96110A000B531C /* red_board.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_board.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,20 +181,17 @@
 				701630112A8B658B0038AD6E /* Info.plist */,
 				70162FBC2A88BE370038AD6E /* AppDelegate.swift */,
 				701630122A8B67BF0038AD6E /* AppMC3.swift */,
-				70FE94F22A95E10E00C59AAE /* 3d card model */,
-				70FE945F2A94D90A00C59AAE /* cardnew */,
 				7016300F2A8B65740038AD6E /* ControllerMultipeer.swift */,
-				70FE945C2A93286600C59AAE /* Main */,
+				70FE945D2A94B2BD00C59AAE /* blue_board.usdz */,
+				8252E5A02A96110A000B531C /* red_board.usdz */,
+				70162FC22A88BE380038AD6E /* Assets.xcassets */,
+				70FE94F22A95E10E00C59AAE /* 3d card model */,
+				8252E59D2A961046000B531C /* Audio */,
+				70FE93A82A8E73B300C59AAE /* card */,
 				70FE94592A93283600C59AAE /* Host */,
 				70FE945A2A93284000C59AAE /* Join */,
+				70FE945C2A93286600C59AAE /* Main */,
 				70FE940E2A8E78EC00C59AAE /* Object */,
-				70FE93A82A8E73B300C59AAE /* card */,
-				70162FD02A89D8700038AD6E /* board_blue.usdz */,
-				70FE95892A95E42900C59AAE /* Audio */,
-				70162FF32A8B5A3A0038AD6E /* boardbaru.usdz */,
-				70FE945D2A94B2BD00C59AAE /* boardblue.usdz */,
-				70162FCE2A8967D20038AD6E /* ColorExt.swift */,
-				70162FC22A88BE380038AD6E /* Assets.xcassets */,
 				70162FC42A88BE380038AD6E /* Preview Content */,
 			);
 			path = BelajarArKit;
@@ -281,13 +274,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		70FE945F2A94D90A00C59AAE /* cardnew */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cardnew;
-			sourceTree = "<group>";
-		};
 		70FE94F22A95E10E00C59AAE /* 3d card model */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +304,14 @@
 				7070ED1C2A96056400703708 /* 25.usdz */,
 			);
 			path = "3d card model";
+			sourceTree = "<group>";
+		};
+		8252E59D2A961046000B531C /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				8252E59E2A961052000B531C /* Card.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,7 +378,6 @@
 				70FE951A2A95E12600C59AAE /* 9.usdz in Resources */,
 				70FE957B2A95E30100C59AAE /* p21.png in Resources */,
 				70FE95822A95E30100C59AAE /* p13.png in Resources */,
-				70162FF42A8B5A3A0038AD6E /* boardbaru.usdz in Resources */,
 				70FE95212A95E12600C59AAE /* 17.usdz in Resources */,
 				70FE95802A95E30100C59AAE /* p16.png in Resources */,
 				70FE95832A95E30100C59AAE /* p3.png in Resources */,
@@ -413,10 +406,8 @@
 				70FE95752A95E30100C59AAE /* p5.png in Resources */,
 				70FE95772A95E30100C59AAE /* p20.png in Resources */,
 				70FE95112A95E12600C59AAE /* 7.usdz in Resources */,
-				70FE945E2A94B2BD00C59AAE /* boardblue.usdz in Resources */,
+				70FE945E2A94B2BD00C59AAE /* blue_board.usdz in Resources */,
 				70FE95102A95E12600C59AAE /* 12.usdz in Resources */,
-				70162FD12A89D8700038AD6E /* board_blue.usdz in Resources */,
-				70FE958A2A95E42900C59AAE /* Audio in Resources */,
 				70162FC32A88BE380038AD6E /* Assets.xcassets in Resources */,
 				70FE95242A95E12600C59AAE /* 20.usdz in Resources */,
 				70FE95172A95E12600C59AAE /* 2.usdz in Resources */,
@@ -427,6 +418,8 @@
 				70FE95122A95E12600C59AAE /* 3.usdz in Resources */,
 				70FE95232A95E12600C59AAE /* 8.usdz in Resources */,
 				70FE95142A95E12600C59AAE /* 6.usdz in Resources */,
+				8252E59F2A961052000B531C /* Card.mp3 in Resources */,
+				8252E5A12A96110A000B531C /* red_board.usdz in Resources */,
 				70FE95222A95E12600C59AAE /* 5.usdz in Resources */,
 				70FE95152A95E12600C59AAE /* 24.usdz in Resources */,
 				70FE951B2A95E12600C59AAE /* 18.usdz in Resources */,
@@ -449,7 +442,6 @@
 				70FE944E2A90AAC000C59AAE /* ChooseJoin.swift in Sources */,
 				70FE944C2A90AAAB00C59AAE /* ChooseHost.swift in Sources */,
 				70FE94482A90A58100C59AAE /* RoomHost.swift in Sources */,
-				70162FCF2A8967D20038AD6E /* ColorExt.swift in Sources */,
 				70162FBF2A88BE370038AD6E /* ContentView.swift in Sources */,
 				70FE94502A912F0500C59AAE /* ViewAr2.swift in Sources */,
 				70162FBD2A88BE370038AD6E /* AppDelegate.swift in Sources */,
@@ -585,7 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BelajarArKit/Preview Content\"";
-				DEVELOPMENT_TEAM = 22JP9U997Z;
+				DEVELOPMENT_TEAM = Z8X59S7SCX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BelajarArKit/Info.plist;
@@ -619,7 +611,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BelajarArKit/Preview Content\"";
-				DEVELOPMENT_TEAM = 22JP9U997Z;
+				DEVELOPMENT_TEAM = Z8X59S7SCX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BelajarArKit/Info.plist;
