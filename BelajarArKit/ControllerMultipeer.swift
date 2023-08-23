@@ -18,10 +18,8 @@ class ConnnectFourViewModel: NSObject, ObservableObject {
     //    let sharedConn4VM = ConnnectFourViewModel()
     @Published var person0: String = " "
     @Published var isPlayer2Joined: Bool = false
-    
     @Published var receivedMessage2: String = ""
     @Published var receivedMessage : String = ""
-    
     @Published var Loserr : String = " "
     @Published var Winner : String = " "
     @Published var menu1ON : Bool = false
@@ -32,28 +30,19 @@ class ConnnectFourViewModel: NSObject, ObservableObject {
     @Published var imgcard : String = ""
     @Published var imgcardhost : String = ""
     @Published var imgcardjoin : String = ""
-    
-    
-    
     @Published var luse: Int = 1
     @Published var roleplay: Int = 1
-    
     @Published var loser : String = ""
     @Published var loserhost : String = ""
-    
     @Published var win : String = ""
     @Published var winhost : String = ""
     @Published var winUserJoin : String = ""
     @Published var winUserHost : String = ""
     @Published var loseCondJoin : String = ""
     @Published var loseCondHost : String = ""
-    
-    
-    
-    
-    
     @Published var SaveJoinMystry : String = " "
     @Published var SaveHostMystry : String = " "
+    
     
     @Published var isChangeToGameScreen = false
     var peerId: MCPeerID //identitas perangkat

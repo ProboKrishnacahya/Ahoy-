@@ -14,7 +14,7 @@
 		70162FCD2A89678F0038AD6E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70162FCC2A89678F0038AD6E /* Coordinator.swift */; };
 		701630102A8B65740038AD6E /* ControllerMultipeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016300F2A8B65740038AD6E /* ControllerMultipeer.swift */; };
 		701630132A8B67BF0038AD6E /* AppMC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701630122A8B67BF0038AD6E /* AppMC3.swift */; };
-		7070ED1D2A96056400703708 /* 25.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7070ED1C2A96056400703708 /* 25.usdz */; };
+		7070ED202A964F7E00703708 /* 25.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7070ED1F2A964F7E00703708 /* 25.usdz */; };
 		70FE94462A90A54B00C59AAE /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE94452A90A54B00C59AAE /* Menu.swift */; };
 		70FE94482A90A58100C59AAE /* RoomHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE94472A90A58100C59AAE /* RoomHost.swift */; };
 		70FE944A2A90A59000C59AAE /* RoomJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE94492A90A59000C59AAE /* RoomJoin.swift */; };
@@ -86,7 +86,7 @@
 		7016300F2A8B65740038AD6E /* ControllerMultipeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerMultipeer.swift; sourceTree = "<group>"; };
 		701630112A8B658B0038AD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		701630122A8B67BF0038AD6E /* AppMC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMC3.swift; sourceTree = "<group>"; };
-		7070ED1C2A96056400703708 /* 25.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 25.usdz; sourceTree = "<group>"; };
+		7070ED1F2A964F7E00703708 /* 25.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 25.usdz; sourceTree = "<group>"; };
 		70FE94452A90A54B00C59AAE /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		70FE94472A90A58100C59AAE /* RoomHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomHost.swift; sourceTree = "<group>"; };
 		70FE94492A90A59000C59AAE /* RoomJoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomJoin.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				70FE95052A95E12600C59AAE /* 22.usdz */,
 				70FE95032A95E12600C59AAE /* 23.usdz */,
 				70FE94FC2A95E12600C59AAE /* 24.usdz */,
-				7070ED1C2A96056400703708 /* 25.usdz */,
+				7070ED1F2A964F7E00703708 /* 25.usdz */,
 			);
 			path = "3d card model";
 			sourceTree = "<group>";
@@ -390,6 +390,7 @@
 				70FE95792A95E30100C59AAE /* p17.png in Resources */,
 				70FE950D2A95E12600C59AAE /* 15.usdz in Resources */,
 				70FE951E2A95E12600C59AAE /* 22.usdz in Resources */,
+				7070ED202A964F7E00703708 /* 25.usdz in Resources */,
 				70FE95762A95E30100C59AAE /* p12.png in Resources */,
 				70FE957A2A95E30100C59AAE /* p7.png in Resources */,
 				70FE95782A95E30100C59AAE /* p4.png in Resources */,
@@ -412,7 +413,6 @@
 				70FE95242A95E12600C59AAE /* 20.usdz in Resources */,
 				70FE95172A95E12600C59AAE /* 2.usdz in Resources */,
 				70FE95862A95E30100C59AAE /* p22.png in Resources */,
-				7070ED1D2A96056400703708 /* 25.usdz in Resources */,
 				70FE95732A95E30100C59AAE /* p19.png in Resources */,
 				70FE957E2A95E30100C59AAE /* p6.png in Resources */,
 				70FE95122A95E12600C59AAE /* 3.usdz in Resources */,
@@ -577,7 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BelajarArKit/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8X59S7SCX;
+				DEVELOPMENT_TEAM = 22JP9U997Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BelajarArKit/Info.plist;
@@ -611,7 +611,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BelajarArKit/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8X59S7SCX;
+				DEVELOPMENT_TEAM = 22JP9U997Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BelajarArKit/Info.plist;

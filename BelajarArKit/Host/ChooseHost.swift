@@ -322,7 +322,7 @@ struct ChooseHost: View {
                                             
                                             conn4VM.sendSaveHost(HostData: "PersonHost22")
                                             conn4VM.imghost = "22"
-                                            imgchoose =  "p23"
+                                            imgchoose =  "p22"
                                             
                                         }
                                     
