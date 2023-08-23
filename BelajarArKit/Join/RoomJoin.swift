@@ -28,10 +28,6 @@ struct RoomJoin: View {
                     Image("Versus")
                         .scaledToFit()
                         .scaleEffect(scalebtn)
-                        .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: scalebtn)
-                        .onAppear {
-                            scalebtn = 0.25
-                        }
                         .padding(.top , -100)
                         .padding(.bottom , -100)
                         

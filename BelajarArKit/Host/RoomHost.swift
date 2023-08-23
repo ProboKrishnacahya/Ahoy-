@@ -34,10 +34,7 @@ struct RoomHost: View {
                             .padding(.top , -100)
                             .padding(.bottom , -100)
                             .scaleEffect(scalebtn)
-                            .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: scalebtn)
-                            .onAppear {
-                                scalebtn = 0.25
-                            }
+                            
                         if conn4VM.isPlayer2Joined {
                             Image("bluecard3")
                                 .scaledToFit()
