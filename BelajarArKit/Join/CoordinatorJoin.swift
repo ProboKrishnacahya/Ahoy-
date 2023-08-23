@@ -79,11 +79,27 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
         
         
+        
         guard let view = self.view else { return }
         
         let tapLocation =  recognizer.location(in: view)
         
         if let entity = view.entity(at:  tapLocation) as? ModelEntity {
+            
+            do {
+                            let audioResource = try AudioFileResource.load(named: "Card.mp3",
+                                                                           in: nil,
+                                                                           inputMode: .spatial,
+                                                                           loadingStrategy: .preload,
+                                                                           shouldLoop: false)
+                            let audioPlaybackController = entity.prepareAudio(audioResource)
+                            audioPlaybackController.play()
+                        } catch {
+                            print("Error loading audio file")
+                        }
+                        
+                        let feedback = UINotificationFeedbackGenerator()
+                        feedback.notificationOccurred(.success)
             
             count -= 1
             print(conn4VM.imgcard)
@@ -94,13 +110,16 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
             let rotation = simd_quatf(angle: .pi / 6, axis: [3, 0, 0])
             let positionChange = SIMD3<Float>(0.1, -0.5, -2)
             
+            
+            print("ini cobacek")
+            print(conn4VM.imgcardjoin)
+            
             newTransform.rotation = rotation
             newTransform.translation += positionChange
             
             entity.transform = newTransform
             
-            
-
+            print(conn4VM.loser)
             if entity.name == "card1" {
                 person1 = 0
                 print("myperson1")
@@ -225,7 +244,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 print("myperson25")
                 print(person25)
             }
-            if count == 1 && person1 == 1 && img1 == conn4VM.imgcardjoin{
+            
+           
+           
+            if count == 1 && person1 == 1 && img1 == conn4VM.imgcardhost{
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -236,8 +258,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person1 == 0 && img1 == conn4VM.imgcardjoin {
+            if count == 1 && person1 == 0 && img1 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -248,8 +274,11 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person2 == 1 && img2 == conn4VM.imgcardjoin{
+            if count == 1 && person2 == 1 && img2 == conn4VM.imgcardhost{
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -260,8 +289,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person2 == 0 && img2 == conn4VM.imgcardjoin {
+            if count == 1 && person2 == 0 && img2 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -272,8 +305,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person3 == 1 && img3 == conn4VM.imgcardjoin{
+            if count == 1 && person3 == 1 && img3 == conn4VM.imgcardhost{
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -284,8 +319,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person3 == 0 && img3 == conn4VM.imgcardjoin {
+            if count == 1 && person3 == 0 && img3 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -296,8 +335,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person4 == 1 && img4 == conn4VM.imgcardjoin{
+            if count == 1 && person4 == 1 && img4 == conn4VM.imgcardhost{
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -308,8 +349,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person4 == 0 && img4 == conn4VM.imgcardjoin {
+            if count == 1 && person4 == 0 && img4 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -320,8 +365,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person5 == 1 && img5 == conn4VM.imgcardjoin{
+            if count == 1 && person5 == 1 && img5 == conn4VM.imgcardhost{
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -332,8 +379,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person5 == 0 && img5 == conn4VM.imgcardjoin {
+            if count == 1 && person5 == 0 && img5 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -344,8 +395,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person6 == 1 && img6 == conn4VM.imgcardjoin{
+            if count == 1 && person6 == 1 && img6 == conn4VM.imgcardhost{
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -356,8 +409,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person6 == 0 && img6 == conn4VM.imgcard {
+            if count == 1 && person6 == 0 && img6 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -368,8 +425,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person7 == 1 && img7 == conn4VM.imgcard{
+            if count == 1 && person7 == 1 && img7 == conn4VM.imgcardhost{
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -380,8 +439,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person7 == 0 && img7 == conn4VM.imgcard {
+            if count == 1 && person7 == 0 && img7 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -392,8 +455,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person8 == 1 && img8 == conn4VM.imgcard{
+            if count == 1 && person8 == 1 && img8 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -404,8 +469,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person8 == 0 && img8 == conn4VM.imgcard {
+            if count == 1 && person8 == 0 && img8 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -416,8 +485,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person9 == 1 && img9 == conn4VM.imgcard{
+            if count == 1 && person9 == 1 && img9 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -428,8 +499,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person9 == 0 && img9 == conn4VM.imgcard {
+            if count == 1 && person9 == 0 && img9 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -440,8 +515,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person10 == 1 && img10 == conn4VM.imgcard{
+            if count == 1 && person10 == 1 && img10 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -452,8 +529,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person10 == 0 && img10 == conn4VM.imgcard {
+            if count == 1 && person10 == 0 && img10 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -464,8 +545,10 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
-            if count == 1 && person11 == 1 && img11 == conn4VM.imgcard{
+            if count == 1 && person11 == 1 && img11 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -476,8 +559,12 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
             }
-            if count == 1 && person11 == 0 && img11 == conn4VM.imgcard {
+            if count == 1 && person11 == 0 && img11 == conn4VM.imgcardhost {
                 // Create a new anchor entity and add it to the scene
                 let anchorEntity = AnchorEntity()
 
@@ -488,6 +575,431 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
                 anchorEntity.addChild(won)
                 //                anchorEntity.addChild(box)
                 view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person12 == 1 && img12 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person12 == 0 && img12 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person13 == 1 && img13 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person13 == 0 && img13 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+
+            if count == 1 && person14 == 1 && img14 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person14 == 0 && img14 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+
+            if count == 1 && person15 == 1 && img15 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person15 == 0 && img15 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person16 == 1 && img16 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person16 == 0 && img16 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person17 == 1 && img17 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person17 == 0 && img17 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person18 == 1 && img18 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person18 == 0 && img18 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+
+            if count == 1 && person19 == 1 && img19 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person19 == 0 && img19 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person20 == 1 && img20 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person20 == 0 && img20 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person21 == 1 && img21 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person21 == 0 && img21 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person22 == 1 && img22 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person22 == 0 && img22 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person23 == 1 && img23 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person23 == 0 && img23 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person24 == 1 && img24 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person24 == 0 && img24 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
+            }
+            if count == 1 && person25 == 1 && img25 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You Won", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winUserJoin")
+                conn4VM.winUserJoin = "win"
+                conn4VM.sendSaveHost(HostData: "losehost")
+                conn4VM.loserhost = "lose"
+            }
+            if count == 1 && person25 == 0 && img25 == conn4VM.imgcardhost {
+                // Create a new anchor entity and add it to the scene
+                let anchorEntity = AnchorEntity()
+
+                // Create and add a new box entity
+                let won =  ModelEntity(mesh: MeshResource.generateText("You lose", extrusionDepth: 0.03, font: .boldSystemFont(ofSize: 0.2), containerFrame: .zero, alignment: .center,lineBreakMode: .byCharWrapping), materials: [SimpleMaterial()])
+                won.position = SIMD3(x: -0.2, y: -0.4, z: -1) // Set the position of the box
+
+                anchorEntity.addChild(won)
+                //                anchorEntity.addChild(box)
+                view.scene.addAnchor(anchorEntity)
+                conn4VM.sendSaveHost(HostData: "winhost")
+                conn4VM.winhost = "win"
             }
 
 

@@ -10,16 +10,116 @@ import RealityKit
 import ARKit
 
 struct ContentView : View {
-    @State var Card1: String = "s"
     @EnvironmentObject var conn4VM: ConnnectFourViewModel
     
-   
+    init(){
+        UINavigationBar.setAnimationsEnabled(false)
+    }
+    
     var body: some View {
-        VStack{
-            
-            
+        ZStack{
             
             ARViewContainer(conn4VM: conn4VM).edgesIgnoringSafeArea(.all)
+                .environmentObject(ConnnectFourViewModel())
+            VStack{
+                if conn4VM.roleplay == 1 {
+                    Image("yourturn")
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(0.7)
+                        .animation(.easeInOut(duration: 0.5))
+                       
+                        
+                    Spacer()
+                    Button("Done"){
+                        conn4VM.sendSaveHost(HostData: "done2")
+                        conn4VM.roleplay = 0
+                    }
+                    .padding(.horizontal , 60)
+                    .padding(.vertical , 15)
+                    .background(Color(red: 0, green: 0, blue: 0.5))
+                    .foregroundStyle(.white)
+                    .clipShape(Capsule())
+                    .animation(.easeInOut(duration: 0.5))
+                }else{
+                    
+
+                    Image("wait")
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(0.5)
+                        .padding(.top, 120)
+                        .animation(.easeInOut(duration: 0.5))
+                        
+                        
+                    Spacer()
+                }
+            }.animation(.easeInOut(duration: 0.5))
+            VStack{
+                if conn4VM.win == "win" || conn4VM.winhost == "win" || conn4VM.winUserJoin == "win" || conn4VM.winUserHost == "win" {
+                    Rectangle()
+                        .frame(width: 500, height: 1000)
+                        .opacity(0.8)
+                        .animation(.easeInOut(duration: 0.5))
+                        .foregroundColor(Color.black)
+                    
+                }
+            }
+            VStack{
+//                Text(conn4VM.loserhost)
+//                Text(conn4VM.winhost)
+                
+                if conn4VM.win == "win" {
+                    Image("lose")
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(0.7)
+                        .animation(.easeInOut(duration: 0.5))
+                    
+                    
+                    
+                        
+                }
+                if conn4VM.winhost == "win" {
+                    Image("winbtn")
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(0.5)
+                        .animation(.easeInOut(duration: 0.3))
+                        
+                    
+                }
+                if conn4VM.winUserJoin == "win" {
+                    Image("lose")
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(0.7)
+                        .animation(.easeInOut(duration: 0.5))
+                    
+                    
+                        
+                }
+                if conn4VM.winUserHost == "win" {
+                    Image("winbtn")
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(0.7)
+                        .animation(.easeInOut(duration: 0.3))
+                       
+                    
+                }
+
+            }
+            .animation(.easeInOut(duration: 0.5))
+            VStack{
+                if conn4VM.roleplay == 0{
+                    Rectangle()
+                        .frame(width: 500, height: 1000)
+                        .opacity(0.1)
+                        .animation(.easeInOut(duration: 0.5))
+                    
+                }
+            }
                 
         }
     }
@@ -93,9 +193,6 @@ struct ARViewContainer: UIViewRepresentable {
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(0.01, 0 , -0.05)
                 
-                // Atur posisi objek card sesuai kebutuhan
-                
-                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
@@ -109,7 +206,6 @@ struct ARViewContainer: UIViewRepresentable {
                 cardEntity.position = SIMD3<Float>(-0.02, 0 , -0.05)
                 
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
-                
                 cardEntity.generateCollisionShapes(recursive: true)
                 
                 anchor.addChild(cardEntity)
@@ -165,8 +261,6 @@ struct ARViewContainer: UIViewRepresentable {
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(0.01, 0 , -0.02)
                 
-                
-                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
@@ -179,8 +273,6 @@ struct ARViewContainer: UIViewRepresentable {
                 let anchor = AnchorEntity(plane: .horizontal)
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(-0.02, 0 , -0.02)
-                
-                
                 
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
@@ -224,8 +316,6 @@ struct ARViewContainer: UIViewRepresentable {
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(0.04, 0 , 0.01)
                 
-                
-                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
@@ -235,16 +325,14 @@ struct ARViewContainer: UIViewRepresentable {
                 
             }
             if let cardEntity = try? ModelEntity.load(named: "14") {
+                
                 let anchor = AnchorEntity(plane: .horizontal)
+                
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(0.01, 0 , 0.01)
-                
-                
-                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
-                
                 anchor.addChild(cardEntity)
                 arView.scene.anchors.append(anchor)
                 
@@ -284,7 +372,6 @@ struct ARViewContainer: UIViewRepresentable {
                 cardEntity.position = SIMD3<Float>(0.07, 0 , 0.04)
                 
                 
-                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
@@ -297,7 +384,6 @@ struct ARViewContainer: UIViewRepresentable {
                 let anchor = AnchorEntity(plane: .horizontal)
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(0.04, 0 , 0.04)
-                
                 
                 
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
@@ -314,7 +400,6 @@ struct ARViewContainer: UIViewRepresentable {
                 cardEntity.position = SIMD3<Float>(0.01, 0 , 0.04)
                 
                 
-                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
@@ -327,7 +412,6 @@ struct ARViewContainer: UIViewRepresentable {
                 let anchor = AnchorEntity(plane: .horizontal)
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(-0.02, 0 , 0.04)
-                
                 
                 
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
@@ -354,11 +438,9 @@ struct ARViewContainer: UIViewRepresentable {
             }
             if let cardEntity = try? ModelEntity.load(named: "22") {
                 let anchor = AnchorEntity(plane: .horizontal)
+                
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(0.07, 0 , 0.07)
-                
-                
-                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
@@ -384,9 +466,7 @@ struct ARViewContainer: UIViewRepresentable {
                 let anchor = AnchorEntity(plane: .horizontal)
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
                 cardEntity.position = SIMD3<Float>(0.01, 0 , 0.07)
-                
-                
-                
+                                
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
                 
                 cardEntity.generateCollisionShapes(recursive: true)
@@ -401,7 +481,6 @@ struct ARViewContainer: UIViewRepresentable {
                 cardEntity.position = SIMD3<Float>(-0.02, 0 , 0.07)
                 
                 cardEntity.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0, 0])
-                
                 cardEntity.generateCollisionShapes(recursive: true)
                 
                 anchor.addChild(cardEntity)
@@ -410,7 +489,7 @@ struct ARViewContainer: UIViewRepresentable {
             }
             
             //row6
-            if let cardEntity = try? ModelEntity.load(named: conn4VM.imgjoin) {
+            if let cardEntity = try? ModelEntity.load(named: conn4VM.imghost) {
                 let anchor = AnchorEntity(plane: .horizontal)
                 
                 cardEntity.scale = SIMD3<Float>(0.040, 0.040, 0.040)
@@ -452,7 +531,9 @@ struct ARViewContainer: UIViewRepresentable {
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
+    @State var HostMystry: String
     static var previews: some View {
+        
         ContentView()
             .environmentObject(ConnnectFourViewModel())
     }

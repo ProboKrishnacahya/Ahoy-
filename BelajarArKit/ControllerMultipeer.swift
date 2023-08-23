@@ -34,6 +34,24 @@ class ConnnectFourViewModel: NSObject, ObservableObject {
     @Published var imgcardjoin : String = ""
     
     
+    
+    @Published var luse: Int = 1
+    @Published var roleplay: Int = 1
+    
+    @Published var loser : String = ""
+    @Published var loserhost : String = ""
+    
+    @Published var win : String = ""
+    @Published var winhost : String = ""
+    @Published var winUserJoin : String = ""
+    @Published var winUserHost : String = ""
+    @Published var loseCondJoin : String = ""
+    @Published var loseCondHost : String = ""
+    
+    
+    
+    
+    
     @Published var SaveJoinMystry : String = " "
     @Published var SaveHostMystry : String = " "
     
@@ -115,72 +133,7 @@ extension ConnnectFourViewModel: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        //        if let receivehost = String(data: data, encoding: .utf8) {
-        //            DispatchQueue.main.async {
-        //                switch receivehost {
-        //                default:
-        //                    self.SaveHostMystry = receivehost
-        //                    break
-        //                }
-        //
-        //                self.objectWillChange.send()
-        //            }
-        //        }
-        //        if let receivejoin = String(data: data, encoding: .utf8) {
-        //            DispatchQueue.main.async {
-        //                switch receivejoin {
-        //                default:
-        //                    self.SaveJoinMystry = receivejoin
-        //                    break
-        //                }
-        //
-        //                self.objectWillChange.send()
-        //            }
-        //        }
-        
-        //        if let lose = String(data: data, encoding: .utf8) {
-        //            DispatchQueue.main.async {
-        //                switch lose {
-        //                default:
-        //                    self.Loserr = lose
-        //                    break
-        //                }
-        //
-        //                self.objectWillChange.send()
-        //            }
-        //        }
-        //        if let win = String(data: data, encoding: .utf8) {
-        //            DispatchQueue.main.async {
-        //                switch win {
-        //                case "gambar1":
-        //                    self.receivedMessage2 = "view1"
-        //                case "kosong":
-        //                    self.receivedMessage2 = win
-        //                default:
-        //                    self.Winner = win
-        //                    break
-        //                }
-        //
-        //                self.objectWillChange.send()
-        //            }
-        //        }
-        //        if let menuOn = String(data: data, encoding: .utf8) {
-        //            DispatchQueue.main.async {
-        //                switch menuOn {
-        //                case "gambar1":
-        //                    self.receivedMessage2 = "view1"
-        //                case "anjay":
-        //                    self.menu1ON = true
-        //                default:
-        //                    self.menu1ON = true
-        //                    break
-        //                }
-        //
-        //                self.objectWillChange.send()
-        //            }
-        //
-        //
-        //        }
+       
         if let imgSave = String(data: data, encoding: .utf8) {
             DispatchQueue.main.async {
                 switch imgSave {
@@ -259,7 +212,16 @@ extension ConnnectFourViewModel: MCSessionDelegate {
                 case "PersonHost25":
                     self.imghost = "25"
                     self.imgcardhost = "a25"
+                case "done1":
+                    self.roleplay = 1
+                case "done2":
+                    self.roleplay = 0
+                case "lose1":
+                    self.luse = 1
+                case "lose2":
+                    self.roleplay = 0
                 default:
+                   
                    
                     break
                 }
@@ -344,7 +306,24 @@ extension ConnnectFourViewModel: MCSessionDelegate {
                 case "personjoin25":
                     self.imgjoin = "25"
                     self.imgcardjoin = "a25"
+                case "lose":
+                    self.loser = "Lose"
+                case "losehost":
+                    self.loserhost = "Lose"
+                case "win":
+                    self.win = "win"
+                case "winhost":
+                    self.winhost = "win"
+                case "winUserHost":
+                    self.winUserHost = "win"
+                case "winUserJoin":
+                    self.winUserJoin = "win"
+                case "loseCondHost":
+                    self.winUserJoin = "lose"
+                case "loseCondJoin":
+                    self.winUserJoin = "lose"
                 default:
+                    
                     
                     break
                 }

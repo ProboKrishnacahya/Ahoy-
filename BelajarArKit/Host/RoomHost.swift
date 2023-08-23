@@ -9,45 +9,68 @@ import SwiftUI
 
 struct RoomHost: View {
     @EnvironmentObject var conn4VM: ConnnectFourViewModel
+    @State private var scalebtn:Double = 0.2
 
+    init(){
+        UINavigationBar.setAnimationsEnabled(false)
+    }
     var body: some View {
         NavigationStack{
-            VStack{
-                Image("han")
-                    .scaledToFit()
-                    .scaleEffect(0.8)
-                    .padding(.top)
+            ZStack{
+                Image("Createroom")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
                 
-                if conn4VM.isPlayer2Joined {
-                    Image("prob")
-                        .scaledToFit()
-                        .scaleEffect(0.8)
-                        .padding(.top)
-                }
-                
-                //            Image("prob")
-                //                .padding(.top)
-                //                .scaledToFit()
-                //                .scaleEffect(0.8)
-                Spacer()
-                
-                Button("Open Room"){
-                    conn4VM.advertise()
-                }
-                
-                if conn4VM.isPlayer2Joined {
-                    NavigationLink(destination: ChooseHost()){
-                        Button("Next"){
+                VStack{
+                    VStack{
+                        Image("redcard")
+                            .scaledToFit()
+                            .scaleEffect(0.8)
+                            .padding(.top)
+                        
+                        Image("Versus")
+                            .scaledToFit()
+                            .padding(.top , -100)
+                            .padding(.bottom , -100)
+                            .scaleEffect(scalebtn)
+                            .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: scalebtn)
+                            .onAppear {
+                                scalebtn = 0.25
+                            }
+                        if conn4VM.isPlayer2Joined {
+                            Image("bluecard3")
+                                .scaledToFit()
+                                .scaleEffect(0.8)
                             
                         }
-                        .padding(.horizontal , 60)
-                        .padding(.vertical , 15)
-                        .background(Color(red: 0, green: 0, blue: 0.5))
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
+                        else{
+                            Image("bluecard")
+                                .scaledToFit()
+                                .scaleEffect(0.8)
+                            
+                            
+                        }
+                    }
+                    .animation(.easeInOut(duration: 0.5))
+                                
+                    if conn4VM.isPlayer2Joined {
+                        NavigationLink(destination: ChooseHost()){
+                            Image("BtnPlay")
+                                .scaledToFit()
+                                .scaleEffect(1)
+                                .padding(.bottom, 20)
+                                .animation(.easeInOut(duration: 1))
+                                
+                        }
                     }
                 }
+                
             }
+            .onAppear{
+                conn4VM.advertise()
+            }
+            
         }
     }
 }

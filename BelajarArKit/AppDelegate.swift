@@ -14,7 +14,7 @@ struct MC3App: App {
     var body: some Scene {
         WindowGroup {
             
-            Home()
+            Menu()
                 .environmentObject(conn4VM)
             
         }
