@@ -121,9 +121,7 @@ class Coordinator: NSObject, ARSessionDelegate , ObservableObject{
                 print("myperson1")
                 print(person1)
                 touch1 = 0
-                conn4VM.sendSaveHost(HostData: "check1")
-                conn4VM.check1 = "anjeng"
-                print(conn4VM.check1)
+               
             }
             else if entity.name == "card2" {
                 person2 = 0

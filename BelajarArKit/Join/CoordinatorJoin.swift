@@ -115,7 +115,7 @@ class CoordinatorJoin: NSObject, ARSessionDelegate , ObservableObject{
             print(conn4VM.imgcardjoin)
             
             newTransform.rotation = rotation
-            newTransform.translation += positionChange
+            newTransform.translation = positionChange
             
             entity.transform = newTransform
             

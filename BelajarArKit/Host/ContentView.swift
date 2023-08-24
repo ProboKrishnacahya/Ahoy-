@@ -128,6 +128,7 @@ struct ARViewContainer: UIViewRepresentable {
     let conn4VM: ConnnectFourViewModel
     @EnvironmentObject var conn4: ConnnectFourViewModel
     @State var save: String = "halo"
+    @State var personil: Bool = true
     
     func makeUIView(context: Context) -> ARView {
         
@@ -156,7 +157,12 @@ struct ARViewContainer: UIViewRepresentable {
             
             myperson2.orientation = simd_quatf(angle: .pi / 6, axis: [0, 0 , 0])
             
+            
+            
             myperson2.generateCollisionShapes(recursive: true)
+                
+                
+            
             
             
             anchor.addChild(myperson2)

@@ -42,7 +42,7 @@ class ConnnectFourViewModel: NSObject, ObservableObject {
     @Published var loseCondHost : String = ""
     @Published var SaveJoinMystry : String = " "
     @Published var SaveHostMystry : String = " "
-    @Published var check1 : String = "asu"
+    @Published var check1 : Bool = true
     
     @Published var isChangeToGameScreen = false
     var peerId: MCPeerID //identitas perangkat
@@ -210,7 +210,7 @@ extension ConnnectFourViewModel: MCSessionDelegate {
                 case "lose2":
                     self.roleplay = 0
                 case "check1":
-                    self.check1 = "anjeng"
+                    self.check1 = false
                 default:
                    
                    

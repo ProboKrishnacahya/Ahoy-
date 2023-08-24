@@ -12,6 +12,7 @@ struct ChooseHost: View {
     @State var HostMystry: String = ""
     @State var ImgHostMystry = ""
     @State var imgchoose: String = ""
+    @State var ButtonOn: Int = 0
     init(){
         UINavigationBar.setAnimationsEnabled(false)
     }
@@ -54,6 +55,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost1")
                                             conn4VM.imghost = "1"
                                             imgchoose =  "p1"
+                                            ButtonOn = 1
                                         }
                                     
                                     Image("p2")
@@ -65,6 +67,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost2")
                                             conn4VM.imghost = "2"
                                             imgchoose =  "p2"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -77,6 +80,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost3")
                                             conn4VM.imghost = "3"
                                             imgchoose =  "p3"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -89,6 +93,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost4")
                                             conn4VM.imghost = "4"
                                             imgchoose =  "p4"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -101,6 +106,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost5")
                                             conn4VM.imghost = "5"
                                             imgchoose =  "p5"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -115,6 +121,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost6")
                                             conn4VM.imghost = "6"
                                             imgchoose =  "p6"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -128,6 +135,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost7")
                                             conn4VM.imghost = "7"
                                             imgchoose =  "p7"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -141,6 +149,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost8")
                                             conn4VM.imghost = "8"
                                             imgchoose =  "p8"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -154,6 +163,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost9")
                                             conn4VM.imghost = "9"
                                             imgchoose =  "p9"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -167,6 +177,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost10")
                                             conn4VM.imghost = "10"
                                             imgchoose =  "p10"
+                                            ButtonOn = 1
                                             
                                             
                                         }
@@ -183,6 +194,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost11")
                                             conn4VM.imghost = "11"
                                             imgchoose =  "p11"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -196,6 +208,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost12")
                                             conn4VM.imghost = "12"
                                             imgchoose =  "p12"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -209,6 +222,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost13")
                                             conn4VM.imghost = "13"
                                             imgchoose =  "p13"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -221,6 +235,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost14")
                                             conn4VM.imghost = "14"
                                             imgchoose =  "p14"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -233,6 +248,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost15")
                                             conn4VM.imghost = "15"
                                             imgchoose =  "p15"
+                                            ButtonOn = 1
                                         }
                                     
                                 }
@@ -246,6 +262,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost16")
                                             conn4VM.imghost = "16"
                                             imgchoose =  "p16"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -258,6 +275,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost17")
                                             conn4VM.imghost = "17"
                                             imgchoose =  "p17"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -270,6 +288,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost18")
                                             conn4VM.imghost = "18"
                                             imgchoose =  "p18"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -282,7 +301,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost19")
                                             conn4VM.imghost = "19"
                                             imgchoose =  "p19"
-                                            
+                                            ButtonOn = 1
                                         }
                                     
                                     Image("p20")
@@ -294,6 +313,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost20")
                                             conn4VM.imghost = "20"
                                             imgchoose =  "p20"
+                                            ButtonOn = 1
                                             
                                             
                                         }
@@ -310,6 +330,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost21")
                                             conn4VM.imghost = "21"
                                             imgchoose =  "p21"
+                                            ButtonOn = 1
                                             
                                             
                                         }
@@ -323,6 +344,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost22")
                                             conn4VM.imghost = "22"
                                             imgchoose =  "p22"
+                                            ButtonOn = 1
                                             
                                         }
                                     
@@ -334,6 +356,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost23")
                                             conn4VM.imghost = "23"
                                             imgchoose =  "p23"
+                                            ButtonOn = 1
                                         }
                                     
                                     Image("p24")
@@ -345,6 +368,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost24")
                                             conn4VM.imghost = "24"
                                             imgchoose =  "p24"
+                                            ButtonOn = 1
                                         }
                                     
                                     Image("p25")
@@ -355,6 +379,7 @@ struct ChooseHost: View {
                                             conn4VM.sendSaveHost(HostData: "PersonHost25")
                                             conn4VM.imghost = "25"
                                             imgchoose =  "p25"
+                                            ButtonOn = 1
                                         }
                                     
                                 }
@@ -364,13 +389,14 @@ struct ChooseHost: View {
                                 .animation(.easeInOut(duration: 0.5))
                             
                             
-                            
-                            NavigationLink(destination: ContentView()){
-                                Image("ButtonStart")
-                                    .scaledToFit()
-                                    .scaleEffect(1)
-                                    .padding(.bottom, 20)
-                                
+                            if ButtonOn == 1 {
+                                NavigationLink(destination: ContentView()){
+                                    Image("ButtonStart")
+                                        .scaledToFit()
+                                        .scaleEffect(1)
+                                        .padding(.bottom, 20)
+                                    
+                                }
                             }
                             
                             

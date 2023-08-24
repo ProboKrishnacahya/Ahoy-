@@ -12,6 +12,7 @@ struct ChooseJoin: View {
     @State var JoinMystry = ""
     @State var ImgJoinMystry = ""
     @State var imgchoose: String = ""
+    @State var ButtonOn: Int = 0
     init(){
         UINavigationBar.setAnimationsEnabled(false)
     }
@@ -54,6 +55,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin1")
                                                 conn4VM.imgjoin = "1"
                                                 imgchoose =  "p1"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -66,6 +68,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin2")
                                                 conn4VM.imgjoin = "2"
                                                 imgchoose =  "p2"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -78,6 +81,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin3")
                                                 conn4VM.imgjoin = "3"
                                                 imgchoose =  "p3"
+                                                ButtonOn = 1
                                                 
                                             }
                                         Image("p4")
@@ -89,6 +93,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin4")
                                                 conn4VM.imgjoin = "4"
                                                 imgchoose =  "p4"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p5")
@@ -100,6 +105,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin5")
                                                 conn4VM.imgjoin = "5"
                                                 imgchoose =  "p5"
+                                                ButtonOn = 1
                                             }
                                         
                                     }
@@ -113,6 +119,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin6")
                                                 conn4VM.imgjoin = "6"
                                                 imgchoose =  "p6"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -125,6 +132,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin7")
                                                 conn4VM.imgjoin = "7"
                                                 imgchoose =  "p7"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p8")
@@ -136,6 +144,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin8")
                                                 conn4VM.imgjoin = "8"
                                                 imgchoose =  "p8"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p9")
@@ -147,6 +156,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin9")
                                                 conn4VM.imgjoin = "9"
                                                 imgchoose =  "p9"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p10")
@@ -158,6 +168,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin10")
                                                 conn4VM.imgjoin = "10"
                                                 imgchoose =  "p10"
+                                                ButtonOn = 1
                                             }
                                         
                                     }
@@ -172,6 +183,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin11")
                                                 conn4VM.imgjoin = "11"
                                                 imgchoose =  "p11"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -184,6 +196,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin12")
                                                 conn4VM.imgjoin = "12"
                                                 imgchoose =  "p12"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -196,6 +209,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin13")
                                                 conn4VM.imgjoin = "13"
                                                 imgchoose =  "p13"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -208,6 +222,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin14")
                                                 conn4VM.imgjoin = "14"
                                                 imgchoose =  "p14"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p15")
@@ -219,6 +234,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin15")
                                                 conn4VM.imgjoin = "15"
                                                 imgchoose =  "p15"
+                                                ButtonOn = 1
                                             }
                                         
                                     }
@@ -230,6 +246,9 @@ struct ChooseJoin: View {
                                             .onTapGesture {
                                                 conn4VM.sendSaveHost(HostData: "personjoin16")
                                                 conn4VM.imgjoin = "16"
+                                                imgchoose =  "p16"
+                                                ButtonOn = 1
+                                                
                                             }
                                         
                                         Image("p17")
@@ -241,6 +260,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin17")
                                                 conn4VM.imgjoin = "17"
                                                 imgchoose =  "p17"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p18")
@@ -252,6 +272,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin18")
                                                 conn4VM.imgjoin = "18"
                                                 imgchoose =  "p18"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p19")
@@ -263,6 +284,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin19")
                                                 conn4VM.imgjoin = "19"
                                                 imgchoose =  "p19"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p20")
@@ -274,6 +296,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin20")
                                                 conn4VM.imgjoin = "20"
                                                 imgchoose =  "p20"
+                                                ButtonOn = 1
                                             }
                                         
                                     }
@@ -287,6 +310,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin21")
                                                 conn4VM.imgjoin = "21"
                                                 imgchoose =  "p21"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -299,6 +323,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin22")
                                                 conn4VM.imgjoin = "22"
                                                 imgchoose =  "p22"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p23")
@@ -310,6 +335,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin23")
                                                 conn4VM.imgjoin = "23"
                                                 imgchoose =  "p23"
+                                                ButtonOn = 1
                                             }
                                         
                                         
@@ -322,6 +348,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin24")
                                                 conn4VM.imgjoin = "24"
                                                 imgchoose =  "p24"
+                                                ButtonOn = 1
                                             }
                                         
                                         Image("p25")
@@ -333,6 +360,7 @@ struct ChooseJoin: View {
                                                 conn4VM.sendSaveHost(HostData: "personjoin25")
                                                 conn4VM.imgjoin = "25"
                                                 imgchoose =  "p25"
+                                                ButtonOn = 1
                                                 
                                             }
                                         
@@ -342,15 +370,15 @@ struct ChooseJoin: View {
                                     .padding(.top, -70)
                                     .animation(.easeInOut(duration: 0.5))
                                 
-                                
-                                NavigationLink(destination: ViewAr2()){
-                                    Image("ButtonStart")
-                                        .scaledToFit()
-                                        .scaleEffect(1)
-                                        .padding(.bottom, 20)
-                                    
+                                if ButtonOn == 1{
+                                    NavigationLink(destination: ViewAr2()){
+                                        Image("ButtonStart")
+                                            .scaledToFit()
+                                            .scaleEffect(1)
+                                            .padding(.bottom, 20)
+                                        
+                                    }
                                 }
-                                
                             }
                         }.animation(.easeInOut(duration: 0.5))
                        
